@@ -111,10 +111,7 @@ h6,
     outline: none;
 }
 
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
-}
+
 
 .navbar .dropdown-toggle::after {
     border: none;
@@ -166,7 +163,7 @@ h6,
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: rgba(15, 66, 41, .6);
+    
     z-index: 1;
 }
 
@@ -180,9 +177,10 @@ h6,
     width: 3rem;
     height: 3rem;
     border-radius: 3rem;
-    background-color: var(--primary);
-    border: 10px solid var(--primary);
+    background-color: rgb(197, 23, 145); /* Change background color to pink */
+    border: 10px solid rgb(197, 23, 145); /* Change border color to pink */
 }
+
 
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
@@ -199,7 +197,7 @@ h6,
 }
 
 .page-header {
-    background: linear-gradient(rgba(15, 66, 41, .6), rgba(15, 66, 41, .6)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(15, 66, 41, .6), rgba(15, 66, 41, .6)), url(../img/shock.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -316,7 +314,7 @@ h6,
 /*** Project Portfolio ***/
 #portfolio-flters {
     display: inline-block;
-    background: var(--light);
+    background: white;
     padding: 10px 15px;
 }
 
@@ -517,4 +515,50 @@ h6,
 
 .copyright a:hover {
     color: var(--primary);
+}
+
+
+
+/******************OK*************************************************/
+
+.container-xxl .portfolio-flters {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    position: sticky;
+    top: 100px;
+    width: 200px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 10;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    left: -30px; /* Adjust the left position */
+}
+
+.container-xxl .portfolio-flters li {
+    margin: 5px 0; /* Adjust margin for spacing */
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    color: #495057;
+    flex: 1; /* Distribute remaining space equally */
+    display: flex; /* Use flexbox for vertical centering */
+    align-items: center; /* Center items vertically */
+}
+
+.container-xxl .portfolio-flters li.active {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.container-xxl .portfolio-flters li:hover {
+    background-color: #007bff;
+    color: #ffffff;
 }

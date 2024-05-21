@@ -27,26 +27,46 @@ $SITESETTING= selectdatabyid('gard_sitesettings','1');
         </div>
     </div>
     <!-- Topbar End -->
+    <style>
+    .nav-item.nav-link.active {
+        color: blue !important;
+    }
+</style>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const navLinks = document.querySelectorAll(".nav-item.nav-link");
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h1 class="m-0"><img src="admin/uploads/<?php echo $SITESETTING['logo'];?>"></h1>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.php" class="nav-item nav-link active">Home</a>
-                <a href="about.php" class="nav-item nav-link">About</a>
-                <a href="service.php" class="nav-item nav-link">Services</a>
-                <a href="project.php" class="nav-item nav-link">Projects</a>
-                 <a href="team.php" class="nav-item nav-link">Our Team</a>
-                <a href="contact.php" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="contact.php" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+        navLinks.forEach(function(navLink) {
+            navLink.addEventListener("click", function() {
+                navLinks.forEach(function(link) {
+                    link.classList.remove("active");
+                });
+                this.classList.add("active");
+            });
+        });
+    });
+</script>
+
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h1 class="m-0"><img src="admin/uploads/<?php echo $SITESETTING['logo'];?>"></h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a href="index.php" class="nav-item nav-link active">Home</a>
+            <a href="about.php" class="nav-item nav-link">About</a>
+            <a href="service.php" class="nav-item nav-link">Services</a>
+            <a href="project.php" class="nav-item nav-link">Products</a>
+            <a href="team.php" class="nav-item nav-link">Our Team</a>
+            <a href="contact.php" class="nav-item nav-link">Contact</a>
         </div>
-    </nav>
-    <!-- Navbar End -->
+        <a href="contact.php" class="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+</nav>
+<!-- Navbar End -->
+
